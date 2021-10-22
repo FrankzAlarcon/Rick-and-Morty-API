@@ -1,4 +1,4 @@
-# Rick and Morty API
+# Rick and Morty API's Project
 In this project all the information about the characters was obtained using "fetch" to [Rick and Morty API](https://rickandmortyapi.com/ "Rick and Morty API").
 
 ## About the project
