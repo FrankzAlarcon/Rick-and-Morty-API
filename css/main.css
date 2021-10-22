@@ -1,0 +1,128 @@
+:root {
+  /* Colors */
+  --background: #24282f;
+  --background-card: #3c3e44;
+  --font-color: #f5f5f5;
+  --black-color: #1a1b15;
+  /* Fonts */
+  --principal-font: 'Roboto', sans-serif;
+  --secondary-font: 'Krub', sans-serif;
+}
+html{
+  box-sizing: border-box;
+  font-size: 62.5%;
+}
+*,*::after,*::before{
+  box-sizing: inherit;
+  padding: 0;
+  margin: 0;
+}
+body{
+  font-size: 1.6rem;
+  font-family: var(--principal-font);
+}
+.header{
+  width: 100%;
+  
+}
+.header .header__img{
+  width: 100%;
+  z-index: 100;
+  background-color: var(--black-color);
+}
+.header .header__img img {
+  display: block;
+  width: 32rem;
+  margin: 0 auto;
+  padding: 1.5rem 0;
+}
+.header .nav_bar{
+  width: 100%;
+  text-align: center;
+  background-color: var(--background-card);
+  -webkit-box-shadow: 0px 0px 9px 0px rgba(0,0,0,0.75);
+  -moz-box-shadow: 0px 0px 9px 0px rgba(0,0,0,0.75);
+  box-shadow: 0px 0px 9px 0px rgba(0,0,0,0.75);
+}
+.nav_bar label{
+  width: 100%;
+}
+.nav_bar input{
+  max-width: 60rem;
+  width: 65%;
+  height: 3rem;
+  margin: 1rem auto;
+  background-color: var(--background);
+  border: 1px solid var(--black-color);
+  border-radius: .5rem;
+  color: var(--font-color);
+  font-family: var(--principal-font);
+  font-size: 1.5rem;
+  padding-left: 1rem;
+}
+.main-container{
+  position: relative;
+  width: 100%;
+  height: auto;
+  background-color: var(--background);
+  padding: 2rem 0;
+}
+.main-container .container-cards{
+  display: flex;
+  flex-wrap: wrap;
+  row-gap: 2rem;
+  width: 90%;
+  min-height: 100vh;
+  height: auto;
+  margin: 0 auto;
+}
+.container-cards .card {
+  width: 30rem;
+  height: auto;
+  max-height: 50rem;
+  margin: 0 auto;
+  border: 1px solid aliceblue;
+  border-radius: 1.5rem;
+  overflow: hidden;
+  transition: .3s;
+}
+.card:hover{
+  transform: scale(1.05);
+  cursor: pointer;
+}
+.container-cards .card img {
+  width: 32rem; ;
+}
+.container-cards .card .card__text-container{
+  padding: 1rem;
+  font-size: 1.8rem;
+  line-height: 1.5;
+  color: var(--font-color);
+  font-family: var(--secondary-font);
+}
+.card__text-container .attributes{
+  font-weight: bold;  
+}
+
+.button-show-more{
+  display: block;
+  width: 20rem;
+  height: 6rem;
+  background-color: var(--black-color);
+  color: var(--font-color);
+  text-decoration: none;
+  text-align: center;
+  margin: 3rem auto;
+  padding: 1.4rem 1rem 1rem;
+  border-radius: 1rem;
+  font-family: var(--secondary-font);
+  font-size: 2.5rem;
+  font-weight: bold;
+  transition: .3s;
+}
+.button-show-more:hover{
+  background-color: var(--font-color);
+  color: var(--black-color);
+  transform: scale(1.02);
+  cursor: pointer;
+}
