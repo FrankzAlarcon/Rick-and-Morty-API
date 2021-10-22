@@ -4,6 +4,9 @@
   --background-card: #3c3e44;
   --font-color: #f5f5f5;
   --black-color: #1a1b15;
+  --alive-color: rgb(85 204 68);
+  --dead-color: rgb(214 61 46);
+  --unknown-color: rgb(50 90 68);
   /* Fonts */
   --principal-font: 'Roboto', sans-serif;
   --secondary-font: 'Krub', sans-serif;
@@ -72,7 +75,7 @@ body{
   flex-wrap: wrap;
   row-gap: 2rem;
   width: 90%;
-  min-height: 100vh;
+  min-height: 60vh;
   height: auto;
   margin: 0 auto;
 }
@@ -85,6 +88,9 @@ body{
   border-radius: 1.5rem;
   overflow: hidden;
   transition: .3s;
+  -webkit-box-shadow: 0px 0px 5px 0px var(--background-card);
+  -moz-box-shadow: 0px 0px 5px 0px var(--background-card);
+  box-shadow: 0px 0px 5px 0px var(--background-card);
 }
 .card:hover{
   transform: scale(1.05);
@@ -125,4 +131,20 @@ body{
   color: var(--black-color);
   transform: scale(1.02);
   cursor: pointer;
+}
+.Alive,.Dead,.Unknown{
+  border-radius: .5rem;
+  font-weight: bold;
+}
+.Alive{
+  color: var(--alive-color);
+  border: 2px solid var(--alive-color);
+}
+.Dead{
+  color: var(--dead-color);
+  border: 2px solid var(--dead-color);
+}
+.Unknown{
+  color: var(--unknown-color);
+  border: 2px solid var(--unknown-color);
 }

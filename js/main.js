@@ -59,6 +59,7 @@ function getData(API){
   return charactersData;
 }
 function insertCards(characters = [], container){
+  // characters = toSpanish(characters);
   for (let index in characters) {
     /**Create HTML elements */
     const card = document.createElement('DIV');
@@ -72,18 +73,39 @@ function insertCards(characters = [], container){
     const textGender = document.createElement('P');
     /**Add attributes and text to the HTML elements */
     imageCard.src = characters[index].image;
+    imageCard.alt = `Tarjeta de un personaje de Rick and Morty llamado ${characters[index].name}`
     textName.innerHTML = `<span class="attributes">Nombre: </span>${characters[index].name}`;
-    textStatus.innerHTML = `<span class="attributes">Estado: </span>${characters[index].status}`;
-    textSpecie.innerHTML = `<span class="attributes">Especie: </span>${characters[index].species}`;
+    textStatus.innerHTML = `<span class="${characters[index].status === 'Alive' ? 'Alive': characters[index].status === 'Dead' ? 'Dead' : 'Unknown'}">${characters[index].status.toUpperCase()}</span> - ${characters[index].species}`;    
     textGender.innerHTML = `<span class="attributes">Género: </span>${characters[index].gender}`;
 
     /**Add the elements to the container */
     card.appendChild(imageCard);
     textContainer.appendChild(textName);
-    textContainer.appendChild(textStatus);
-    textContainer.appendChild(textSpecie);
+    // textContainer.appendChild(textSpecie);
     textContainer.appendChild(textGender);
+    textContainer.appendChild(textStatus);
     card.appendChild(textContainer);
     container.appendChild(card);
   }
+}
+
+function toSpanish(characters = []) {
+  characters = characters.map(character=>{
+    if(character.status.toLowerCase() === 'alive'){
+      character.status = 'Vivo/a';
+    }else if(character.status.toLowerCase() === 'dead'){
+      character.status = 'Muerto/a';
+    } else if(character.status.toLowerCase() === 'unknown'){
+      character.status = 'Desconocido'
+    }
+    if(character.gender.toLowerCase() === 'male'){
+      character.gender = "Masculino";
+    } else if(character.gender.toLowerCase() === 'female'){
+      character.gender = "Femenino";
+    }else if(character.gender.toLowerCase() === 'unknown'){
+      character.gender = 'Desconocido';
+    }
+    return character;
+  });
+  return characters;
 }
