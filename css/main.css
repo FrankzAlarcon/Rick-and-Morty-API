@@ -4,9 +4,12 @@
   --background-card: #3c3e44;
   --font-color: #f5f5f5;
   --black-color: #1a1b15;
-  --alive-color: rgb(85 204 68);
+  --alive-color: rgb(90 255 1);
   --dead-color: rgb(214 61 46);
   --unknown-color: rgb(50 90 68);
+  --human-color: #FEE3D4;
+  --alien-color: rgb(85 204 10);
+  --another-color: #496bd1;
   /* Fonts */
   --principal-font: 'Roboto', sans-serif;
   --secondary-font: 'Krub', sans-serif;
@@ -100,7 +103,7 @@ body{
   width: 32rem; ;
 }
 .container-cards .card .card__text-container{
-  padding: 1rem;
+  padding: .2rem 1rem 1rem 1rem;
   font-size: 1.8rem;
   line-height: 1.5;
   color: var(--font-color);
@@ -132,7 +135,7 @@ body{
   transform: scale(1.02);
   cursor: pointer;
 }
-.Alive,.Dead,.Unknown{
+.Alive,.Dead,.Unknown,.Human,.Alien, .Another{
   border-radius: .5rem;
   font-weight: bold;
 }
@@ -147,4 +150,20 @@ body{
 .Unknown{
   color: var(--unknown-color);
   border: 2px solid var(--unknown-color);
+}
+.Human{
+  color: var(--human-color);
+  border: 2px solid var(--human-color);
+}
+.Alien{
+  color: var(--alien-color);
+  border: 2px solid var(--alien-color);
+}
+.Another{
+  color: var(--another-color);
+  border: 2px solid var(--another-color);
+}
+.center{
+  text-align: center;
+  margin-bottom: 1rem;
 }

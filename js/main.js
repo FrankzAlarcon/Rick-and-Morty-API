@@ -59,7 +59,7 @@ function getData(API){
   return charactersData;
 }
 function insertCards(characters = [], container){
-  // characters = toSpanish(characters);
+  //characters = toSpanish(characters);
   for (let index in characters) {
     /**Create HTML elements */
     const card = document.createElement('DIV');
@@ -69,26 +69,47 @@ function insertCards(characters = [], container){
     textContainer.classList.add('card__text-container')
     const textName = document.createElement('P');
     const textStatus = document.createElement('P');
-    const textSpecie = document.createElement('P');
+    textStatus.classList.add('center')
     const textGender = document.createElement('P');
     /**Add attributes and text to the HTML elements */
     imageCard.src = characters[index].image;
     imageCard.alt = `Tarjeta de un personaje de Rick and Morty llamado ${characters[index].name}`
     textName.innerHTML = `<span class="attributes">Nombre: </span>${characters[index].name}`;
-    textStatus.innerHTML = `<span class="${characters[index].status === 'Alive' ? 'Alive': characters[index].status === 'Dead' ? 'Dead' : 'Unknown'}">${characters[index].status.toUpperCase()}</span> - ${characters[index].species}`;    
+    textStatus.innerHTML = `<span class="${classifyStatus(characters[index].status)}"</span>${characters[index].status.toUpperCase()}</span> - 
+                            <span class="${classifySpecie(characters[index].species)}"</span>${characters[index].species.toUpperCase()}</span>`;    
     textGender.innerHTML = `<span class="attributes">Género: </span>${characters[index].gender}`;
 
     /**Add the elements to the container */
     card.appendChild(imageCard);
-    textContainer.appendChild(textName);
-    // textContainer.appendChild(textSpecie);
-    textContainer.appendChild(textGender);
     textContainer.appendChild(textStatus);
+    textContainer.appendChild(textName);
+    textContainer.appendChild(textGender);
     card.appendChild(textContainer);
     container.appendChild(card);
   }
 }
+function classifyStatus(status){
+  if(status === 'Alive'){
+    return 'Alive';
+  }else if (status === 'Dead'){
+    return'Dead';
+  } else {
+    return 'Unknown';
+  }
+}
+function classifySpecie(specie = ""){
+  if (specie === 'Human'){
+    return 'Human';
+  } else if(specie === 'Alien'){
+    return 'Alien';
+  } else if(specie === 'unknown') {
+    return 'Unknown';
+  } else {
+    return 'Another';
+  }
 
+
+}
 function toSpanish(characters = []) {
   characters = characters.map(character=>{
     if(character.status.toLowerCase() === 'alive'){
