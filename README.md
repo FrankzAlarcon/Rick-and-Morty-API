@@ -1,2 +1,2 @@
 # TrainingFetch
-Trainning fecth to the ricky and morty API
+Training fecth to the ricky and morty API
