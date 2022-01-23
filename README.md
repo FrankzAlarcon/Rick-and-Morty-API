@@ -6,4 +6,4 @@ This project was created just using HTML, CSS and JavaScript. Applying:
 - Asynchronous calls to the API
 - Complemented the last point, also using async / await.
 - DOM manipulation
-#####  You can see the project here: [Click me](https://frankzalarcon.github.io/Rick-and-Mory-API/ "Click me")
+#####  You can see the project here: [Click me](https://frankzalarcon.github.io/Rick-and-Morty-API/ "Click me")
